@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gagana T H | Fashion, Beauty & Lifestyle Creator</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FAF9F7; --black: #111110; --charcoal: #2C2C2A;
+    --muted: #8A8A85; --accent: #C9A97A; --rose: #C2847A; --border: #E4E2DD;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--black); font-size: 15px; line-height: 1.6; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.75rem 3rem; background: rgba(250,249,247,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); gap: 0.4rem; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); text-decoration: none; white-space: nowrap; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO — name on one line */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 55% 45%; padding-top: 88px; }
+  .hero-text { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 5rem; }
+  .eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; }
+  .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4.5vw, 5rem); font-weight: 300; line-height: 1.05; color: var(--black); margin-bottom: 0.4rem; white-space: nowrap; }
+  .hero-name em { font-style: italic; color: var(--rose); }
+  .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; font-style: italic; color: var(--muted); margin-bottom: 1.8rem; }
+  .hero-desc { font-size: 0.95rem; color: var(--muted); max-width: 380px; line-height: 1.8; margin-bottom: 2.5rem; }
+  .hero-stats { display: flex; gap: 2.5rem; margin-bottom: 2.8rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--black); line-height: 1; }
+  .stat-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; }
+  .hero-cta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; padding: 0.85rem 2rem; background: var(--black); color: var(--cream); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--charcoal); }
+  .btn-ghost { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: color 0.2s; }
+  .btn-ghost:hover { color: var(--black); border-color: var(--black); }
+
+  .hero-image-wrap { position: relative; overflow: hidden; background: #EDE8E2; }
+  .hero-image-wrap::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--cream) 0%, transparent 15%); z-index: 1; pointer-events: none; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; display: block; }
+
+  section { padding: 6rem 5rem; }
+  section.alt { background: #F3F1ED; }
+  .section-label { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; color: var(--black); margin-bottom: 2.5rem; line-height: 1.2; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .about-text p { color: var(--charcoal); line-height: 1.85; margin-bottom: 1.1rem; font-size: 0.95rem; }
+  .about-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--accent); margin-top: 1.5rem; line-height: 1.5; }
+  .niche-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .niche-tag { padding: 0.35rem 0.9rem; border: 1px solid var(--border); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--charcoal); background: var(--cream); }
+  .platform-list { display: flex; flex-direction: column; gap: 0; }
+  .platform-row { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+  .platform-icon { width: 38px; height: 38px; background: var(--black); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.95rem; }
+  .platform-name { font-weight: 500; font-size: 0.88rem; }
+  .platform-handle { font-size: 0.75rem; color: var(--muted); }
+  .platform-count { margin-left: auto; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; }
+
+  /* STATS BAND */
+  .stats-band { background: var(--black); color: var(--cream); padding: 3.5rem 5rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+  .band-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--accent); }
+  .band-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 0.4rem; }
+
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .service-tile { background: var(--cream); padding: 2rem 1.8rem; }
+  .service-tile.alt { background: #F3F1ED; }
+  .service-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--border); margin-bottom: 0.8rem; }
+  .service-name { font-weight: 500; font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .service-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .why-card { padding: 1.8rem 2rem; border: 1px solid var(--border); }
+  .why-card-icon { font-size: 1.4rem; margin-bottom: 0.8rem; }
+  .why-card-title { font-weight: 500; font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .why-card-text { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+  /* FEATURED */
+  .featured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .reel-card { border: 1px solid var(--border); overflow: hidden; transition: transform 0.25s; text-decoration: none; color: inherit; display: block; }
+  .reel-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+  .reel-thumb { width: 100%; aspect-ratio: 9/16; background: linear-gradient(135deg, #EDE8E2, #D9D2C8); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; position: relative; }
+  .reel-play { position: absolute; width: 44px; height: 44px; background: rgba(0,0,0,0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; padding-left: 3px; }
+  .reel-info { padding: 1rem 1.2rem; }
+  .reel-tag { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem; }
+  .reel-title { font-weight: 500; font-size: 0.9rem; }
+
+  /* COLLABS */
+  .collab-intro { max-width: 540px; color: var(--muted); line-height: 1.85; margin-bottom: 3rem; font-size: 0.95rem; }
+  .collab-types { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 3rem; }
+  .collab-tag { padding: 0.5rem 1.2rem; border: 1px solid var(--border); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--charcoal); }
+  .collab-cta { padding: 2.5rem 3rem; background: var(--black); color: var(--cream); display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+  .collab-cta-text { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; line-height: 1.3; }
+  .btn-light { display: inline-block; padding: 0.75rem 1.8rem; border: 1px solid rgba(255,255,255,0.35); color: var(--cream); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+  .btn-light:hover { background: rgba(255,255,255,0.1); }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-left p { color: var(--muted); line-height: 1.85; margin-bottom: 2rem; font-size: 0.95rem; }
+  .contact-row { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+  .ci-label { color: var(--muted); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; min-width: 75px; }
+  .ci-val a { color: var(--black); text-decoration: none; }
+  .ci-val a:hover { color: var(--accent); }
+  .contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .contact-form input, .contact-form textarea, .contact-form select {
+    width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--border); background: transparent;
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: var(--black); outline: none; transition: border-color 0.2s; resize: none; appearance: none;
+  }
+  .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--accent); }
+  .contact-form textarea { height: 110px; }
+  .send-btn { padding: 0.85rem 2rem; background: var(--black); color: var(--cream); border: none; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; align-self: flex-start; transition: background 0.2s; }
+  .send-btn:hover { background: var(--charcoal); }
+  .send-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .form-success { display: none; padding: 1rem 1.2rem; background: #f0faf4; border: 1px solid #b6e2ca; color: #2d6a4f; font-size: 0.88rem; border-radius: 2px; }
+  .form-error { display: none; padding: 1rem 1.2rem; background: #fff5f5; border: 1px solid #f5c6c6; color: #9b2c2c; font-size: 0.88rem; border-radius: 2px; }
+
+  footer { padding: 2rem 5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--muted); gap: 1rem; flex-wrap: wrap; }
+
+  @media (max-width: 900px) {
+    nav { padding: 0.6rem 1.5rem; gap: 0.3rem; }
+    .nav-links { gap: 1.2rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-image-wrap { height: 70vw; order: -1; }
+    .hero-image-wrap::before { background: linear-gradient(to bottom, transparent 70%, var(--cream) 100%); }
+    .hero-text { padding: 2.5rem 1.5rem 3rem; }
+    .hero-name { white-space: normal; font-size: clamp(2.4rem, 10vw, 3.5rem); }
+    section { padding: 4rem 1.5rem; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .featured-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; }
+    .stats-band { grid-template-columns: repeat(2, 1fr); padding: 3rem 1.5rem; }
+    .collab-cta { flex-direction: column; text-align: center; }
+    footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Gagana T H</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#collabs">Collabs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-text">
+    <p class="eyebrow">Fashion · Beauty · Lifestyle · UGC Creator</p>
+    <h1 class="hero-name"><em>Gagana T H</em></h1>
+    <p class="hero-tagline">Glow With Gagana</p>
+    <p class="hero-desc">Creating authentic content that inspires engagement and drives purchasing decisions — from fashion and beauty to lifestyle, education, and fintech brands.</p>
+    <div class="hero-stats">
+      <div><div class="stat-num">610+</div><div class="stat-label">Followers</div></div>
+      <div><div class="stat-num">5K+</div><div class="stat-label">Avg Reel Views</div></div>
+      <div><div class="stat-num">₹5L+</div><div class="stat-label">Affiliate Sales</div></div>
+    </div>
+    <div class="hero-cta">
+      <a href="https://www.instagram.com/glow_withgagana/" target="_blank" class="btn-primary">View Instagram</a>
+      <a href="#contact" class="btn-ghost">Work With Me</a>
+    </div>
+  </div>
+  <div class="hero-image-wrap">
+    <img class="hero-img" src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAlgBDgDASIAAhEBAxEB/8QAHQABAAEFAQEBAAAAAAAAAAAAAAQBAgMFBgcICf/EAF0QAAIBAwIEBAMEBQgHBQQBFQABAgMEEQUhBhIxQRMiUWEHcYEUMpGhCCNCsdEVGDNSVqXB0xYkYpKU4fBDU1Vy8TSChJOkFyVUwtIJRmOFoiYnREVzdHWyNWXi/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAECAwQFBv/EAC4RAQEAAgICAQMEAgEFAQEBAAABAhEDIRIxBCJBUQUTFDIVYUIjM3Gh0YFS8P/aAAwDAQACEQMRAD8A+MgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeyUv0YPjnUjzQ4Hyv/AOq2X+cXfzXPjt/Yb+9rL/OP0stIclFJrDMwH5m/zXPjt/Yb+9rL/OH81z47f2G/vay/zj9MgB+Zv81z47f2G/vay/zh/Nc+O39hv72sv84/TIAfmb/Nc+O39hv72sv84fzXPjt/Yb+9rL/OP0yAH5m/zXPjt/Yb+9rL/OH81z47f2G/vay/zj9MgB+Zv81z47f2G/vay/zh/Nc+O39hv72sv84/TIAfmb/Nc+O39hv72sv84fzXPjt/Yb+9rL/OP0yAH5m/zXPjt/Yb+9rL/OH81z47f2G/vay/zj9MgB+Zv81z47f2G/vay/zh/Nc+O39hv72sv84/TIAfmb/Nc+O39hv72sv84fzXPjt/Yb+9rL/OP0yAH5m/zXPjt/Yb+9rL/OH81z47f2G/vay/zj9MgB+Zv81z47f2G/vay/zh/Nc+O39hv72sv84/TIAfmb/Nc+O39hv72sv84fzXPjt/Yb+9rL/OP0yAH5m/zXPjt/Yb+9rL/OH81z47f2G/vay/zj9MgB+Zv81z47f2G/vay/zh/Nc+O39hv72sv84/TIAfmb/Nc+O39hv72sv84fzXPjt/Yb+9rL/OP0yAH5m/zXPjt/Yb+9rL/OH81z47f2G/vay/zj9MgB+Zv81z47f2G/vay/zh/Nc+O39hv72sv84/TIAfmb/Nc+O39hv72sv84fzXPjt/Yb+9rL/OP0yAH5lz/Rf+OcFmXA+P/wAq2X+cRZfo3/GiM+SXBuJen8p2n+afppqO1Fs4y+uFG79N+5aySbY+d8tPgOP6M/xul93gr+9LP/OKz/Rl+N8VmXBOP/yrZ/5x+hNnfJRSci6vfRllc3VE/TraLyZx+ekP0ZvjdN4jwTn/APKtn/nGZfoufHV//gN/e1l/nH6E6HcOtLfHX0Onp/cRFk1uJ4+S5WyvzP8A5rnx2/sN/e1l/nD+a58dv7Df3tZf5x+mQKtn5m/zXPjt/Yb+9rL/ADh/Nc+O39hv72sv84/TIAfmb/Nc+O39hv72sv8AOH81z47f2G/vay/z
